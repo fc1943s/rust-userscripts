@@ -9,7 +9,7 @@ pub fn run() -> Result<(), JsValue> {
     let document = window.document().expect("should have a document on window");
     let body = document.body().expect("document should have a body");
 
-    let stuff = vec![5, 5, 2, 0, 8];
+    let stuff = vec![0, 0, 0, 0, 3];
 
     for num in stuff {
         let val = document.create_element("div")?;
