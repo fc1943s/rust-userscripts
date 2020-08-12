@@ -21,7 +21,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js && node update-version.js ../userscripts/filmow.user.js",
     "build-filmow-dev": "rollup --config && node update-version.js ../userscripts/filmow-dev.user.js && node ../userscripts/build-filmow-dev.js",
-    "build2": "rollup --config",
+    "concurrently": "concurrently",
     "start": "webpack-dev-server"
   },
   "dependencies": {
@@ -34,6 +34,7 @@
     "webpack-dev-server": "^3.11",
     "copy-webpack-plugin": "^6.0",
     "@wasm-tool/rollup-plugin-rust": "^1.0",
+    "concurrently": "^5.3",
     "replace-in-file": "^6.1"
   }
 }

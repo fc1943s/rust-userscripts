@@ -15,9 +15,9 @@ extern "C" {
 
 #[wasm_bindgen(start)]
 pub fn run() -> Result<(), JsValue> {
-    let window = web_sys::window().expect("no global `window` exists");
-    let document = window.document().expect("should have a document on window");
-    let body = document.body().expect("document should have a body");
+    let window: web_sys::Window = web_sys::window().expect("no global `window` exists");
+    let document: web_sys::Document = window.document().expect("should have a document on window");
+    let body: web_sys::HtmlElement = document.body().expect("document should have a body");
 
     let stuff = vec![0, 0, 0, 0, 3];
 
@@ -28,6 +28,7 @@ pub fn run() -> Result<(), JsValue> {
     }
 
     println!("---- TEST1!!!!!");
+    // unsafe.
     log("---- TEST2!!!!!");
 
     Ok(())
