@@ -20,8 +20,8 @@ jobs:
     - name: wasm-pack build
       run: wasm-pack build
 
-    - name: npm install --cwd www
-      run: npm install --cwd www
+    - name: cd www && npm install
+      run: cd www && npm install
 
     - name: npm run build --prefix www
       run: npm run build --prefix www
