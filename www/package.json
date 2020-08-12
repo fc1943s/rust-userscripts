@@ -19,7 +19,9 @@
     "create-wasm-app": ".bin/create-wasm-app.js"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js && node update-version.js ../userscripts/filmow.user.js",
+    "build-filmow-dev": "webpack --config webpack.config.js && rollup --config && node update-version.js ../userscripts/filmow-dev.user.js && node ../userscripts/build-filmow-dev.js",
+    "build2": "rollup --config",
     "start": "webpack-dev-server"
   },
   "dependencies": {
@@ -30,6 +32,8 @@
     "webpack": "^4.44",
     "webpack-cli": "^3.3",
     "webpack-dev-server": "^3.11",
-    "copy-webpack-plugin": "^6.0"
+    "copy-webpack-plugin": "^6.0",
+    "@wasm-tool/rollup-plugin-rust": "^1.0",
+    "replace-in-file": "^6.1"
   }
 }

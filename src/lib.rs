@@ -3,6 +3,16 @@
 //
 use wasm_bindgen::prelude::*;
 
+#[wasm_bindgen]
+extern "C" {
+    #[wasm_bindgen(js_namespace = console)]
+    fn log(s: &str);
+    #[wasm_bindgen(js_namespace = console, js_name = log)]
+    fn log_u32(a: u32);
+    #[wasm_bindgen(js_namespace = console, js_name = log)]
+    fn log_many(a: &str, b: &str);
+}
+
 #[wasm_bindgen(start)]
 pub fn run() -> Result<(), JsValue> {
     let window = web_sys::window().expect("no global `window` exists");
@@ -16,6 +26,9 @@ pub fn run() -> Result<(), JsValue> {
         val.set_inner_html(&num.to_string());
         body.append_child(&val)?;
     }
+
+    println!("---- TEST1!!!!!");
+    log("---- TEST2!!!!!");
 
     Ok(())
 }
