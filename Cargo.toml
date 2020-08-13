@@ -15,9 +15,10 @@ default = ["console_error_panic_hook"]
 opt-level = "s"
 
 [dependencies]
-serde = "^1.0"
-serde_derive = "^1.0"
-
+serde = "1.0.115"
+serde_derive = "1.0.115"
+seed = "0.7.0"
+gloo = "0.2.1"
 
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
@@ -34,21 +35,23 @@ console_error_panic_hook = { version = "0.1.1", optional = true }
 wee_alloc = { version = "0.4.2", optional = true }
 
 [dependencies.wasm-bindgen]
-version = "^0.2"
+version = "0.2.67"
 features = ["serde-serialize"]
 
 [dependencies.web-sys]
-version = "=0.3.35" # 0.3.44
+version = "0.3.44" # 0.3.44
 features = [
   'Document',
   'Element',
   'HtmlElement',
   'Node',
   'Window',
+  'console',
+  'DomTokenList'
 ]
 
 [dev-dependencies]
-wasm-bindgen-test = "^0.3"
+wasm-bindgen-test = "0.3.17"
 
 
 
