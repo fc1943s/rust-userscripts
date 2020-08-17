@@ -162,3 +162,21 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 //     }
 //     result
 // }
+
+/*
+pending:
+let root = document.querySelector('#as-director .movies_list');
+let compare = elem => {
+    let commentsText =
+        elem
+            .querySelector('.badge-num-comments')
+            .innerText
+            .replace('K', '000')
+            .replace(',', '');
+    return Number(commentsText);
+};
+
+Array.from(root.children)
+    .sort((a, b) => compare(b) - compare(a))
+    .forEach(el => root.appendChild(el));
+*/
